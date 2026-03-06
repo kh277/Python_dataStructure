@@ -56,7 +56,7 @@ def SimulatedAnnealing(N, L, data):
         probability = exp(min(MAX_EXPONENT, (curEnergy - nextEnergy) / (BOLTZMANN_CONSTANT * curT)))
 
         # 전이하지 않을 경우 이전 상태로 롤백
-        if (probability < random.random()):
+        if probability < random.random():
             move(nextV, status)
         else:
             curEnergy = min(curEnergy, nextEnergy)

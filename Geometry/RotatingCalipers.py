@@ -1,4 +1,4 @@
-# Rotating Calipers - O(NlogN + N)
+# Rotating Calipers - O(N)
 
 '''
 2차원 좌표 N개가 points로 주어질 때, 가장 먼 두 점 사이의 거리 반환.

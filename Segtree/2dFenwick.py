@@ -1,7 +1,7 @@
 # 2D Fenwick Tree
 
 '''
-펜윅 트리는 구간 합, 점 업데이트 쿼리를 O((logN)^2)에 처리할 수 있는 자료구조임.
+구간 합, 점 업데이트 쿼리를 O((logN)^2)에 처리할 수 있는 자료구조.
 
 build - O(YX)
 update - O(logY * logX)

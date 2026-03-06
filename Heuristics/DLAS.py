@@ -58,4 +58,3 @@ def DLAS(N, status):
         iterCount += 1
 
     return bestScore, bestStatus
- 

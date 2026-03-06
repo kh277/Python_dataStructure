@@ -7,7 +7,7 @@
 '''
 
 import heapq
-INF = 10**8
+INF = 1000000000
 
 
 def Dijkstra(V, edge, start):
@@ -16,18 +16,18 @@ def Dijkstra(V, edge, start):
     for startV, endV, cost in edge:
         graph[startV].append([endV, cost])
 
-    distance = [INF for _ in range(V+1)]
+    DP = [INF for _ in range(V+1)]
 
     # 시작 정점 처리
     pq = []     # (시작 정점으로부터의 거리, 목표 정점) 형태로 저장
-    distance[start] = 0
+    DP[start] = 0
     heapq.heappush(pq, (0, start))
 
     while pq:
         curDist, curV = heapq.heappop(pq)
 
         # 갱신할 필요가 없는 경우 (저장된 비용 < 계산한 비용)
-        if distance[curV] < curDist:
+        if DP[curV] < curDist:
             continue
 
         # 현재 탐색한 정점과 이어전 간선들에 대해서
@@ -35,8 +35,8 @@ def Dijkstra(V, edge, start):
             nextDist = curDist + tempDist
 
             # 갱신이 가능한 경우 (저장된 비용 > 계산한 비용)
-            if nextDist < distance[nextV]:
-                distance[nextV] = nextDist
+            if nextDist < DP[nextV]:
+                DP[nextV] = nextDist
                 heapq.heappush(pq, (nextDist, nextV))
 
-    return distance[1:]
+    return DP[1:]

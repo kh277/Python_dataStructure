@@ -1,4 +1,4 @@
-# Manacher 알고리즘 - O(N)
+# Manacher - O(N)
 
 '''
 문자열 string의 부분 문자열 중 팰린드롬인 구간의 개수와 길이를 O(N)에 찾는 알고리즘.

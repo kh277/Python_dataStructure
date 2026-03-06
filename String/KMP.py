@@ -42,5 +42,5 @@ def KMP(text, pattern):
                 j = fail[j]
             else:
                 j += 1
-    
+
     return result

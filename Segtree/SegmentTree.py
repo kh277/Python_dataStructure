@@ -20,7 +20,7 @@ def build(N, A):
 def update(N, tree, index, value):
     index += N
     tree[index] = value
-    
+
     while index > 1:
         index >>= 1
         tree[index] = tree[index<<1] + tree[index<<1 | 1]

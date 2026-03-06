@@ -11,7 +11,7 @@ from collections import deque
 def TopologySort(V, edge):
     # 간선 정보 전처리 및 진입 차수 설정
     graph = [[] for _ in range(V+1)]
-    inDegree = [0 for _ in range(V+1)]      # 진입 차수 저장
+    inDegree = [0 for _ in range(V+1)]
     for i in edge:
         graph[i[0]].append(i[1])
         inDegree[i[1]] += 1

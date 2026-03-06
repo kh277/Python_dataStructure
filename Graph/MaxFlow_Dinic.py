@@ -1,11 +1,12 @@
 # Maximum Flow - Dinic 알고리즘 O(V^2 * E)
 
 '''
-Dinic의 DFS 부분을 non-recur 방식으로 구현했더니 더 느려졌음.
+addEdge()를 통해 간선을 추가하고, source -> sink로 가는 최대 유량 도출
+Dinic의 DFS 부분을 non-recur 방식으로 구현했더니 더 느려짐.
 '''
 
 from collections import deque
-INF = 10000000
+INF = 1000000000
 
 
 class Dinic:

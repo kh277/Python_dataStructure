@@ -1,8 +1,8 @@
-# LCA - O(logN)
+# Lowest Common Ancestor - O(logN)
 
 '''
 (1-base 정점)
-두 정점의 LCA(최소 공통 조상)을 logN에 구함
+두 정점의 LCA(최소 공통 조상)을 logN에 도출
 '''
 
 class LCA():

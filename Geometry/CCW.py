@@ -1,4 +1,4 @@
-# Counter Clock Wise
+# Counter Clock Wise - O(1)
 
 '''
 2차원 좌표 A, B, C를 입력받아 A->B->C를 순서대로 이은 선분의 시계/반시계 방향을 판단.

@@ -1,4 +1,4 @@
-# Minimum Spanning Tree (Kruskal) : O(ElogE)
+# Minimum Spanning Tree (Kruskal) - O(ElogE)
 
 '''
 (1-base 정점)

@@ -1,4 +1,4 @@
-# Tenary Search
+# Tenary Search - O(logN)
 
 '''
 아래로 볼록인 함수 f(x)가 존재할 때,

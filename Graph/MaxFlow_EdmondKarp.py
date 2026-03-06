@@ -5,7 +5,7 @@
 '''
 
 from collections import deque
-INF = 10**8
+INF = 1000000000
 
 
 def BFS(capacity, source, sink, parent):

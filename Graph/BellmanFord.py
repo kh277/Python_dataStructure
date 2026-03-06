@@ -6,7 +6,7 @@
 음수 간선이 섞여도 사용 가능
 '''
 
-INF = 10**8
+INF = 1000000000
 
 
 def BellmanFord(V, E, edge, start):
@@ -16,7 +16,7 @@ def BellmanFord(V, E, edge, start):
     for i in range(V):
         for j in range(E):
             curStart, curEnd, curDist = edge[j]
-            
+
             # curEnd까지 거리 갱신이 가능한 경우
             if DP[curStart] != INF:
                 DP[curEnd] = min(DP[curEnd], DP[curStart] + curDist)
