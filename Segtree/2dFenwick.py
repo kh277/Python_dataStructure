@@ -1,11 +1,12 @@
-# 2D Fenwick Tree
+# 2D Fenwick Tree (비재귀 구현)
 
 '''
-구간 합, 점 업데이트 쿼리를 O((logN)^2)에 처리할 수 있는 자료구조.
+2D 펜윅 트리를 이용해 점 업데이트, 구간 쿼리를 O((logN)^2)에 처리할 수 있는 자료구조
+2D 세그먼트 트리보다 빠르지만 사용처가 한정적임.
 
-build - O(YX)
-update - O(logY * logX)
-query - O(logY * logX)
+build() : 배열 A를 기반으로 2차원 세그먼트 트리 생성, O(NM)
+update() : A의 i번째 원소값 수정 및 전파, O(logNlogM)
+query() : x구간 [sX, eX], y구간 [sY, eY]의 총합 도출, O(logNlogM)
 '''
 
 from array import array
