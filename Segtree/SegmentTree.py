@@ -1,5 +1,13 @@
 # Segment Tree (비재귀 구현)
 
+'''
+점 업데이트, 구간 쿼리를 O(logN)에 처리하기 위한 자료구조
+
+build() : 배열 A를 기반으로 세그먼트 트리 생성, O(N)
+update() : A의 i번째 원소값 수정 및 전파, O(logN)
+query() : 구간 [l, r]의 총합 도출, O(logN)
+'''
+
 from array import array
 ARRAY_TYPE = 'i'
 

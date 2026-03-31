@@ -1,8 +1,10 @@
-# Rotating Calipers - O(N)
+# Rotating Calipers
 
 '''
-2차원 좌표 N개가 points로 주어질 때, 가장 먼 두 점 사이의 거리 반환.
-볼록 껍질 도출에 O(NlogN), 회전하는 캘리퍼스 처리에 O(N) 소모.
+2차원 좌표 N개가 points로 주어질 때, 가장 멀리 떨어진 두 점 사이의 거리 반환.
+
+ConvexHull() : 2차원 좌표 집합 points에 대해 볼록 껍질 도출, O(NlogN)
+RotatingCalipers() : 볼록 껍질 hull에서 가장 멀리 떨어진 두 점 사이의 거리 반환, O(N)
 '''
 
 

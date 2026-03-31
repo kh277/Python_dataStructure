@@ -1,12 +1,13 @@
-# Li Chao Tree (비재귀 구현)
+# Li Chao Tree (Dynamic + 비재귀 구현)
 
 '''
 직선 삭제 쿼리가 없는 Convex Hull Trick 문제를 Online으로 해결하기 위한 자료구조.
-update : 직선 ax+b 추가
-query : x가 주어질 때, 직선들 중 ax+b의 최대값 쿼리
-
 직선의 기울기가 단조증가/단조감소할 경우 CHT를 사용하면 쿼리를 amortized O(1)에 처리가 가능하며,
 단조증가/단조감소가 아닐 경우 리차오 트리를 이용해 쿼리를 O(logX)에 처리가 가능하다.
+
+build() : 직선을 관리하기 위한 동적 세그먼트 트리 생성, O(1)
+update() : x범위가 [-INF, INF]인 직선 ax+b 추가, O(logN)
+query() : 저장된 직선들 중 x=t에서의 최대값 반환, O(logN) 
 '''
 
 MAX = 10**13

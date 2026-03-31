@@ -1,24 +1,24 @@
 # 2D Segment Tree (비재귀 구현)
 
 '''
-구간 합, 점 업데이트 쿼리를 O((logN)^2)에 처리할 수 있는 자료구조
-2D 펜윅 트리보단 느리지만, 최대값, 최소값 등의 중간 구간에 대한 처리를 하는 경우 유용함.
+점 업데이트, 구간 쿼리를 O((logN)^2)에 처리할 수 있는 자료구조
+2D 펜윅 트리보단 느리지만 펜윅 트리가 처리할 수 없는 최대값, 최소값 등의 중간 구간에 대한 처리를 할 때 유용함.
 
-build - O(YX)
-update - O(logY * logX)
-query - O(logY * logX)
+build() : 배열 A를 기반으로 2차원 세그먼트 트리 생성, O(NM)
+update() : A의 i번째 원소값 수정 및 전파, O(logNlogM)
+query() : x구간 [sX, eX], y구간 [sY, eY]의 총합 도출, O(logNlogM)
 '''
 
 from array import array
 
 
-# Y*X 크기의 arr을 기반으로 2D Segment Tree 생성
-def build(Y, X, arr):
+# Y*X 크기의 A을 기반으로 2D Segment Tree 생성
+def build(Y, X, A):
     tree = [array('i', [0]) * (X<<1) for _ in range(Y<<1)]
 
-    for y in range(len(arr)):
-        for x in range(len(arr[0])):
-            tree[y+Y][x+X] = arr[y][x]
+    for y in range(len(A)):
+        for x in range(len(A[0])):
+            tree[y+Y][x+X] = A[y][x]
     for y in range(Y, Y<<1):
         for x in range(X-1, 0, -1):
             tree[y][x] = max(tree[y][x<<1], tree[y][x<<1 | 1])

@@ -1,7 +1,9 @@
-# Convex Hull (Andrew's Monotone Chain) - O(NlogN)
+# Convex Hull (Monotone Chain)
 
 '''
-2차원 좌표들이 points로 주어질 때, 볼록 껍질을 구성하는 점 구하기
+2차원 평면 위의 점 집합을 모두 포함하는 가장 작은 볼록 다각형을 구하는 알고리즘.
+
+ConvexHull() : 2차원 좌표 집합 points에 대해 볼록 껍질 도출, O(NlogN)
 '''
 
 def CCW(A, B, C):
