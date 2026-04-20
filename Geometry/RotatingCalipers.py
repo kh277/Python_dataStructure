@@ -7,7 +7,6 @@ ConvexHull() : 2차원 좌표 집합 points에 대해 볼록 껍질 도출, O(Nl
 RotatingCalipers() : 볼록 껍질 hull에서 가장 멀리 떨어진 두 점 사이의 거리 반환, O(N)
 '''
 
-
 def CCW(A, B, C):
     return (B[0]-A[0]) * (C[1]-A[1]) - (B[1]-A[1]) * (C[0]-A[0])
 
@@ -37,34 +36,31 @@ def ConvexHull(points):
 def RotatingCalipers(points):
     # 볼록 껍질 구하기
     hull = ConvexHull(points)
-    length = len(hull)
+    N = len(hull)
 
     # 특수 케이스 처리
-    if length < 2:
+    if N < 2:
         return 0
-    elif length == 2:
-        return distance(hull[0], hull[1])**0.5
-    
+    elif N == 2:
+        return distance(hull[0], hull[1])
+
     result = 0
     curFarestP = 1
-    for curP in range(length):
-        nextP = (curP+1) % length
+    for curP in range(N):
+        nextP = (curP+1) % N
 
-        # i와 다음 점 next_i을 잇는 직선과 가장 멀리 떨어진 점 도출
+        # curP와 다음 점 nextP를 잇는 직선과 가장 멀리 떨어진 점 도출
         while True:
-            nextFarestP = (curFarestP+1) % length
-
-            # 두 점 curP, nextP에서 curFarestP, nextFarestP까지 거리 비교
+            nextFarestP = (curFarestP+1) % N
             d1 = CCW(hull[curP], hull[nextP], hull[curFarestP])
             d2 = CCW(hull[curP], hull[nextP], hull[nextFarestP])
 
-            # nextFarestP까지의 거리가 더 클 경우 갱신
             if d1 < d2:
                 curFarestP = nextFarestP
             else:
                 break
 
         # 갱신
-        result = max(result, distance(hull[curP], hull[nextFarestP]), distance(hull[nextP], hull[nextFarestP]))
+        result = max(result, distance(hull[curP], hull[curFarestP]), distance(hull[nextP], hull[curFarestP]))
 
     return result**0.5
