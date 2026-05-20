@@ -25,6 +25,9 @@
 from random import randrange
 from math import gcd
 
+BASE = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}
+MAX_BASE = 37
+
 
 # 밀러-라빈 소수판별법 서브 함수1
 def modPow(base, exp, MOD):
@@ -55,20 +58,18 @@ def MillerRabin(num, base):
 
 # 밀러-라빈 소수판별법
 def isPrime(num):
-    base = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}
-    maxBase = base[-1]
 
-    if num <= maxBase:
-        if num in base:
+    if num <= MAX_BASE:
+        if num in BASE:
             return True
         return False
 
-    for i in base:
+    for i in BASE:
         if num == i:
             return True
         if MillerRabin(num, i) == True:
             return False
-    if num <= maxBase:
+    if num <= MAX_BASE:
         return False
 
     return True
